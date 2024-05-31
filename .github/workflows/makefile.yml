@@ -16,5 +16,5 @@ jobs:
 
 
 
-    - name: Install dependencies
-      run: make clean
+    - name: Build dwm
+      run: make clean install
