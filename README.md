@@ -30,13 +30,6 @@
 
 Configuration is done by editing the `config.h` file and recompiling. Refer to the example configuration for details on setting up keybindings, layouts, and other preferences.
 
-## Metrics Integration
-
-To integrate GitHub metrics into your profile or repository, you can use the following features from `lowlighter/metrics`:
-
-- **GitHub Activity**: Display recent contributions and activity, providing insight into your coding habits and project involvement.
-- **Community Contributions**: Showcase your participation in the GitHub community, including issues, pull requests, and repository stars.
-- **Repository Statistics**: Present detailed statistics for your repositories, including star counts, forks, and primary license information.
 
 
 ## License
