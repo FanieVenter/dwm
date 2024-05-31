@@ -14,14 +14,6 @@
 - **Minimalistic**: Lightweight and minimal resource usage.
 - **Keyboard-driven**: Navigate and manage windows primarily through keyboard shortcuts.
 
-### Enhanced with Metrics
-
-Incorporating appropriate features from the `metrics` project, this repository includes:
-
-- **Activity Metrics**: Display your GitHub activity, including commits, pull requests, and issues.
-- **Community Metrics**: Show your community contributions, such as discussions and repositories starred.
-- **Repository Metrics**: Highlight key statistics about your repositories, like stars, forks, and license usage.
-
 ## Installation
 
 1. Clone the repository:
@@ -46,29 +38,6 @@ To integrate GitHub metrics into your profile or repository, you can use the fol
 - **Community Contributions**: Showcase your participation in the GitHub community, including issues, pull requests, and repository stars.
 - **Repository Statistics**: Present detailed statistics for your repositories, including star counts, forks, and primary license information.
 
-### Example Metrics Configuration
-
-```yaml
-name: Metrics
-on:
-  schedule: 
-    - cron: '0 * * * *'
-  workflow_dispatch:
-jobs:
-  github-metrics:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: GitHub Metrics
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ secrets.METRICS_TOKEN }}
-          plugin_activity: yes
-          plugin_repositories: yes
-          plugin_community: yes
-```
-
-For detailed documentation and more configuration options, visit the [metrics repository](https://github.com/lowlighter/metrics).
 
 ## License
 
