@@ -5,10 +5,11 @@ on:
 
 jobs:
       example:
-          uses: lowlighter/metrics@latest
-          filename: metrics.repository.svg
-          token: ${{ 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 }}
-          template: repository
-          repo: metrics
-          base: header
-          plugin_introduction: yes
+            uses: lowlighter/metrics@v3.34
+            with:
+              filename: metrics.repository.svg
+              token: ${{ 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 }}
+              template: repository
+              repo: metrics
+              base: header
+              plugin_introduction: yes
