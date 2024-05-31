@@ -6,12 +6,12 @@ on:
 jobs:
       
       example:
-                runs-on: ubuntu-latest
-                with:
-                  uses: lowlighter/metrics@latest
-                  filename: metrics.repository.svg
-                  token: ${{ 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 }}
-                  template: repository
-                  repo: metrics
-                  base: header
-                  plugin_introduction: yes
+                runs-on: ubuntu-latest 
+                steps:
+                      uses: lowlighter/metrics@latest
+                      filename: metrics.repository.svg
+                      token: ${{ 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 }}
+                      template: repository
+                      repo: dwm
+                      base: header
+                      plugin_introduction: yes
