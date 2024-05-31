@@ -14,7 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-
+    - name: Install dependencies
+      run: make
 
     - name: Build dwm
       run: make clean install
