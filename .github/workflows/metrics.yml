@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
 uses: lowlighter/metrics@latest
-with:
+jobs:
   filename: metrics.repository.svg
   token: ${{ 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 }}
   template: repository
