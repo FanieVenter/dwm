@@ -4,9 +4,11 @@ with:
   template: repository
   filename: metrics.repository.svg
   token: ${{ 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 }}
-  user: lowlighter
   repo: metrics
   plugin_lines: yes
   plugin_followup: yes
   plugin_projects: yes
   plugin_projects_repositories: lowlighter/metrics/projects/1
+  template: repository
+  base: header
+  plugin_introduction: yes
