@@ -15,7 +15,7 @@ jobs:
                     with:
                       
                       filename: metrics.repository.svg
-                      token: ${{ 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 }}
+                      token: ${{ secrets.GH_TOKEN }}
                       template: repository
                       repo: dwm
                       base: header
