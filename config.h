@@ -457,7 +457,7 @@ static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
 	[DEFAULT_TAGS]        = { "", "󰈹", "", "", "","󰊗" },	
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
+	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E" },
 	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>"},
 };
 
@@ -475,7 +475,7 @@ static char *tagicons[][NUMTAGS] =
 static const int tagrows = 2;
 #endif // BAR_TAGGRID_PATCH
 
-/* There are two options when it comes to per-client rules:
+/* There are two options when it comes to per-client rultogglebares:
  *  - a typical struct table or
  *  - using the RULE macro
  *
@@ -636,7 +636,7 @@ static const int nmaster     = 1;    /* number of clients in master area */
 static const int nstack      = 0;    /* number of clients in primary stack area */
 #endif // FLEXTILE_DELUXE_LAYOUT
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen window */
 #if DECORATION_HINTS_PATCH
 static const int decorhints  = 1;    /* 1 means respect decoration hints */
 #endif // DECORATION_HINTS_PATCH
@@ -1082,7 +1082,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_F5,         xrdb,                   {.v = NULL } },
 	#endif // XRDB_PATCH
 	{ MODKEY,                       XK_t,          setlayout,              {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,          setlayout,              {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,                       XK_f,          setlayout,              {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,          setlayout,              {.v = &layouts[2]} },
 	#if COLUMNS_LAYOUT
 	{ MODKEY,                       XK_c,          setlayout,              {.v = &layouts[3]} },
@@ -1124,7 +1124,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t,          unfloatvisible,         {.v = &layouts[0]} },
 	#endif // UNFLOATVISIBLE_PATCH
 	#if TOGGLEFULLSCREEN_PATCH
-	{ MODKEY,                       XK_y,          togglefullscreen,       {0} },
+	{ MODKEY,                       XK_f,          togglefullscreen,       {0} },
 	#endif // TOGGLEFULLSCREEN_PATCH
 	#if !FAKEFULLSCREEN_PATCH && FAKEFULLSCREEN_CLIENT_PATCH
 	{ MODKEY|ShiftMask,             XK_y,          togglefakefullscreen,   {0} },
@@ -1164,19 +1164,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_F3,         tagall,                 {.v = "F3"} },
 	{ MODKEY|ShiftMask,             XK_F4,         tagall,                 {.v = "F4"} },
 	{ MODKEY|ShiftMask,             XK_F5,         tagall,                 {.v = "F5"} },
-	{ MODKEY|ShiftMask,             XK_F6,         tagall,                 {.v = "F6"} },
-	{ MODKEY|ShiftMask,             XK_F7,         tagall,                 {.v = "F7"} },
-	{ MODKEY|ShiftMask,             XK_F8,         tagall,                 {.v = "F8"} },
-	{ MODKEY|ShiftMask,             XK_F9,         tagall,                 {.v = "F9"} },
+
 	{ MODKEY|ControlMask,           XK_F1,         tagall,                 {.v = "1"} },
 	{ MODKEY|ControlMask,           XK_F2,         tagall,                 {.v = "2"} },
 	{ MODKEY|ControlMask,           XK_F3,         tagall,                 {.v = "3"} },
 	{ MODKEY|ControlMask,           XK_F4,         tagall,                 {.v = "4"} },
 	{ MODKEY|ControlMask,           XK_F5,         tagall,                 {.v = "5"} },
-	{ MODKEY|ControlMask,           XK_F6,         tagall,                 {.v = "6"} },
-	{ MODKEY|ControlMask,           XK_F7,         tagall,                 {.v = "7"} },
-	{ MODKEY|ControlMask,           XK_F8,         tagall,                 {.v = "8"} },
-	{ MODKEY|ControlMask,           XK_F9,         tagall,                 {.v = "9"} },
+
 	#endif // TAGALL_PATCH
 	#if TAGALLMON_PATCH
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_comma,      tagallmon,              {.i = +1 } },
@@ -1303,9 +1297,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_4,                                  3)
 	TAGKEYS(                        XK_5,                                  4)
 	TAGKEYS(                        XK_6,                                  5)
-	TAGKEYS(                        XK_7,                                  6)
-	TAGKEYS(                        XK_8,                                  7)
-	TAGKEYS(                        XK_9,                                  8)
+
 };
 
 #if KEYMODES_PATCH
